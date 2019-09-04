@@ -7,5 +7,14 @@ $(document).ready(function () {
             $("#videogame-buttons").append("<button class='btn btn-success' data-videogame='" + videogames[i] + "'>" + videogames[i] + "</button>");
         }
     }
+    // run the reder function
     renderButtons();
+    // add the button from the user input
+    $("#add-videogame").on("click", function () {
+        event.preventDefault();
+        var videogame = $("#videogame-input").val().trim();
+        videogames.push(videogame);
+        renderButtons();
+        return;
+    });
 });
